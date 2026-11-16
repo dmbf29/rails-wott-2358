@@ -1,0 +1,10 @@
+<%# we need to select where we're putting this new HTML %>
+<%# turbo_stream.whatever_action "the_html_id" %>
+<%# update, remove, append %>
+<%= turbo_stream.append "messages" do %>
+  <%= render "messages/message", message: @message %>
+  <%= render "messages/message", message: @ai_message %>
+<% end %>
+<%= turbo_stream.update "new_message" do %>
+  <%= render "messages/form", chat: @chat, message: Message.new %>
+<% end %>

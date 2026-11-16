@@ -1,3 +1,21 @@
-<h1><%= @challenge.name %></h1>
-
-<%= raw(render_markdown(@challenge.content)) %>
+<div class="container my-5">
+  <div class="d-flex justify-content-between align-items-center">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><%= link_to 'Challenges', challenges_path  %></li>
+        <li class="breadcrumb-item active" aria-current="page"><%= @challenge.name %></li>
+      </ol>
+    </nav>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <%# put off canvas link here %>
+          <%= link_to 'All Chats', "#offcanvasExample", data: { bs_toggle: 'offcanvas' }, role: "button"  %>
+        </li>
+        <li class="breadcrumb-item"><%= link_to 'New Chat', challenge_chats_path(@challenge), data: { turbo_method: :post }  %></li>
+      </ol>
+    </nav>
+  </div>
+  <h1><%= @challenge.name %></h1>
+  <%= raw(render_markdown(@challenge.content)) %>
+</div>

@@ -1,0 +1,6 @@
+<%= simple_form_for [chat, message], html: { data: { controller: 'spinner', action: "submit->spinner#start" }, class: 'd-flex justify-content-between px-3 pb-2'  } do |f| %>
+  <%= f.input :content, placeholder: "Ask a question", required: true, label: false, wrapper_html: { class: 'flex-grow-1', style: 'margin-bottom: 0 !important' } %>
+  <%= f.button :submit, 'Ask LLM', class: 'btn btn-primary' %>
+<% end %>
+<%# data-controller="spinner" %>
+<%# data-action="submit->spinner#start" %>
