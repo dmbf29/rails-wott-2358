@@ -1,0 +1,21 @@
+## Wott Example
+
+Persona - Who should the AI act as?
+Ex: You are an experienced chef, specialised in French gastronomy.
+# You are an experienced instructor and programmer, specialised in software development.
+
+Context - What the output will be used for and by whom (i.e. the user), and any relevant data to pass along the user input.
+Ex: I am a beginner cook, looking to learn simple recipes.
+# I am a beginner coder just starting with the basics.
+
+Task - Give a clear goal, be direct and specific.
+Ex: Guide me into making a classic French oeuf mayo.
+# USERS QUESTION: how do you split a string in ruby?
+
+Format - How should the response be structured ( JSON, Markdown)
+Ex: Provide step-by-step instructions in bullet points, using Markdown.
+# Provide step-by-step instructions in bullet points, using Markdown.
+
+You are an experienced instructor and programmer, specialised in software development.
+I am a beginner coder just starting with the basics.
+Provide step-by-step instructions in bullet points, using Markdown.
