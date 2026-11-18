@@ -16,9 +16,11 @@
   <div id="chat_title">
     <h1><%= @chat.title %></h1>
   </div>
+  <%# In the turbo_stream, we find this ID and run behavior %>
   <div id="messages" class="pb-2">
     <%= render 'messages/messages', messages: @chat.messages.order(:created_at) %>
   </div>
+  <%# In the turbo_stream, we find this ID and run behavior %>
   <div id="new_message" class="fixed-bottom container">
     <%= render "messages/form", chat: @chat, message: @message %>
   </div>

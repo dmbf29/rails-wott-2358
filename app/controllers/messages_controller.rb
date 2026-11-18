@@ -9,7 +9,9 @@ class MessagesController < ApplicationController
 
     if @message.save
       create_assistant_message
-      redirect_to chat_path(@chat)
+      # going to the show page for that chat
+      # redirect_to chat_path(@chat) # refreshes the whole page
+      # render 'create.turbo_stream.erb'
     else
       render 'chats/show', status: :unprocessable_entity
     end
@@ -29,7 +31,7 @@ class MessagesController < ApplicationController
     # Send the message to the AI for a response
     response = rubyllm_chat.ask(@message.content)
     # create an instance of a message from the response
-    Message.create(
+    @ai_message = Message.create(
       content: response.content,
       chat: @chat,
       role: 'assistant'

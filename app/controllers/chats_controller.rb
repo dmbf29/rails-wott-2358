@@ -18,5 +18,6 @@ class ChatsController < ApplicationController
     @chat = current_user.chats.find(params[:id])
     @challenge = @chat.challenge
     @message = Message.new
+    # render 'show.html.erb'
   end
 end

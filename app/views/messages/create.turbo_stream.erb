@@ -1,10 +1,11 @@
-<%# we need to select where we're putting this new HTML %>
-<%# turbo_stream.whatever_action "the_html_id" %>
-<%# update, remove, append %>
+<%# messages is the ID of the div i want to append to %>
 <%= turbo_stream.append "messages" do %>
-  <%= render "messages/message", message: @message %>
-  <%= render "messages/message", message: @ai_message %>
+  <%# I am putting this HTML partial inside of that div i targeted %>
+  <%= render 'messages/message', message: @message %>
+  <%# Then insert the ai message from the controller %>
+  <%= render 'messages/message', message: @ai_message %>
 <% end %>
-<%= turbo_stream.update "new_message" do %>
+<%# messages is the ID of the div i want to update %>
+<%= turbo_stream.update 'new_message' do %>
   <%= render "messages/form", chat: @chat, message: Message.new %>
 <% end %>
